@@ -1,5 +1,10 @@
 - [ ] 17 01:17:16 | Async JavaScript: Promises & Callbacks  
-	- [ ] 348 01 Module Introduction | 01:12  
+	- [ ] 348 01 Module Introduction | 01:12
+	  - Code that "Takes a Bit Longer"
+		- What is "Async Code"?
+		- Callbacks
+		- Promises
+		- async/await
 	- [ ] 349 02 Understanding Synchronous Code Execution ("Sync Code") | 02:51  
 	- [ ] 350 03 Understanding Asynchronous Code Execution ("Async Code") | 05:44  
 	- [ ] 351 04 Blocking Code & The "Event Loop" | 10:30  
