@@ -5,10 +5,13 @@
 		- Callbacks
 		- Promises
 		- async/await
-	- [ ] 349 02 Understanding Synchronous Code Execution ("Sync Code") | 02:51
+	- [x] 349 02 Understanding Synchronous Code Execution ("Sync Code") | 02:51
 	  - JavaScript is Single-Threaded
-		- 
-	- [ ] 350 03 Understanding Asynchronous Code Execution ("Async Code") | 05:44  
+		- JS Can only execute one task at a time.
+	- [ ] 350 03 Understanding Asynchronous Code Execution ("Async Code") | 05:44
+	  - Using only one thread can have a downside
+		- Certain operations can take a bit longer
+		- [console.log()][---- setTimeout() ----][-- moreCode() --]
 	- [ ] 351 04 Blocking Code & The "Event Loop" | 10:30  
 	- [ ] 352 05 Sync + Async Code - The Execution Order | 04:03  
 	- [ ] 353 06 Multiple Callbacks & setTimeout(0) | 03:20  
