@@ -149,13 +149,25 @@
 		button.addEventListener('click', trackUserHandler);
 		```
 
-	- [ ] 355 08 Chaining Multiple Promises | 05:53  
+	- [ ] 355 08 Chaining Multiple Promises | 05:53
+	  - The Promise-success(ful) results are returned step by step.
 	- [ ] 356 09 Promise Error Handling | 07:46  
+	  - Errors are not handled with the normal .then()
+		- catch() is an alternative to errors and error handling
+		  - does not cancel the Promise, but allows it to continue
 	- [ ] 357 10 Promise States & "finally" | 00:41  
-	- [ ] 358 11 Async/ await | 09:11  
-	- [ ] 359 12 Async/ await & Error Handling | 03:07  
-	- [ ] 360 13 Async/ await vs "Raw Promises" | 04:56  
-	- [ ] 361 14 Promise.all(), Promise.race() etc. | 07:59  
-	- [ ] *** ** Promises & async/ await 5 questions
+	- [ ] 358 11 Async/ await | 09:11
+	  - Only in functions
+		- Returns a Promise
+		- await in front of each internal Promise
+		- Does NOT block execution
+		- Just transforms the code behind the scenes
+	- [ ] 359 12 Async/ await & Error Handling | 03:07
+	  - try/catch can be used here  
+	- [ ] 360 13 Async/ await vs "Raw Promises" | 04:56
+	- [ ] 361 14 Promise.all(), Promise.race() etc. | 07:59
+	  - Multiple Promises that I want to orchestrate
+		- Promise.race() // static method to get the faster of two Promises
+		- Promise.all()  // The data is the COMBINATION of all the (Promise) data (as an array).
 	- [ ] 362 15 Wrap Up | 01:27
 	- [ ] 363 16 Useful Resources & Links | 00:10
