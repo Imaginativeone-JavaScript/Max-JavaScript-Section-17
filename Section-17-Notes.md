@@ -20,7 +20,6 @@
 			- The Browser needs a way to communicate back with our JavaScript Code
 				- Callback functions
 				- The Browser steps back into our script and executes something there, once its operation is done.
-
 				With:
 				```javascript
 				const button = document.querySelector('button');
@@ -34,12 +33,122 @@
 				```
 				  - We hand off this task to the Browser, which manages this task behind the scenes.
 					- The Browser steps back into the handler function, once a click occurs.
-
+	
 	- [ ] 351 04 Blocking Code & The "Event Loop" | 10:30
-	- [ ] 352 05 Sync + Async Code - The Execution Order | 04:03  
-	- [ ] 353 06 Multiple Callbacks & setTimeout(0) | 03:20  
-	- [ ] *** ** Asynchronous Code 3 questions  
-	- [ ] 354 07 Getting Started with Promises | 08:25  
+
+		```javascript
+		const button = document.querySelector('button');
+		const output = document.querySelector('p');
+
+		function trackUserHandler() {
+		  console.log('Clicked!);
+		}
+
+		button.addEventListener('click', trackUserHandler);
+
+		let result = 0; // This is NOT handed off to the Browser
+		for (let i = 0; i < 100000000; i++) {
+			result =+ i;
+		}
+		```
+
+		All the click events happen AFTER the loop is complete.
+
+		  #### The Event Loop
+			https://developer.mozilla.org/en-US/docs/Mozilla/Gecko/Chrome/API/Browser_API/Using
+
+	- [ ] 352 05 Sync + Async Code - The Execution Order | 04:03
+
+		Callbacks	
+		```javascript
+		const button = document.querySelector('button');
+		const output = document.querySelector('p');
+
+		function trackUserHandler() {
+			navigator.geolocation.getCurrentPosition(
+				positionData => {
+					console.log(positionData);
+				},
+				error => {
+					console.log(error);
+				}
+			);
+		}
+
+		button.addEventListener('click', trackUserHandler);
+		```
+
+	- [ ] 353 06 Multiple Callbacks & setTimeout(0) | 03:20
+
+		Nested Callbacks
+		```javascript
+		const button = document.querySelector('button');
+		const output = document.querySelector('p');
+
+		function trackUserHandler() {
+			navigator.geolocation.getCurrentPosition(
+				positionData => {
+					setTimeout(() => {
+						console.log(positionData);
+					}, 2000);
+				},
+				error => {
+					console.log(error);
+				}
+			);
+			setTimeout(() => {
+				console.log(positionData);
+			}, 0);
+			console.log('Getting position...'); // This executes first, because it's in the stack first
+		}
+
+		button.addEventListener('click', trackUserHandler);
+		```
+
+	- [ ] 354 07 Getting Started with Promises | 08:25
+	  - Nested callbacks can be difficult to read
+
+		```javascript
+		const button = document.querySelector('button');
+		const output = document.querySelector('p');
+
+		const setTimer = (duration) => {
+
+			const promise = new Promise((resolve, reject) => {
+
+				setTimeout(() => {
+
+					resolve('Done!'); // Any value can be passed.
+
+				}, duration);
+
+			}); // The Promise constructor function is called right away.
+
+			return promise;
+
+		}
+
+		function trackUserHandler() {
+			navigator.geolocation.getCurrentPosition(
+				positionData => {
+					setTimer(2000).then(data => {
+						console.log(data, positionData);
+					});
+				},
+				error => {
+					console.log(error);
+				}
+			);
+			setTimer(1000).then(() => {
+				console.log('Timer done!');
+			});
+
+			console.log('Getting position...'); // This executes first, because it's in the stack first
+		}
+
+		button.addEventListener('click', trackUserHandler);
+		```
+
 	- [ ] 355 08 Chaining Multiple Promises | 05:53  
 	- [ ] 356 09 Promise Error Handling | 07:46  
 	- [ ] 357 10 Promise States & "finally" | 00:41  
