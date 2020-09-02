@@ -1,4 +1,4 @@
-- [ ] 17 01:17:16 | Async JavaScript: Promises & Callbacks  
+- [x] 17 01:17:16 | Async JavaScript: Promises & Callbacks  
 	- [x] 348 01 Module Introduction | 01:12
 	  - Code that "Takes a Bit Longer"
 		- What is "Async Code"?
@@ -34,7 +34,7 @@
 				  - We hand off this task to the Browser, which manages this task behind the scenes.
 					- The Browser steps back into the handler function, once a click occurs.
 	
-	- [ ] 351 04 Blocking Code & The "Event Loop" | 10:30
+	- [x] 351 04 Blocking Code & The "Event Loop" | 10:30
 
 		```javascript
 		const button = document.querySelector('button');
@@ -57,7 +57,7 @@
 		  #### The Event Loop
 			https://developer.mozilla.org/en-US/docs/Mozilla/Gecko/Chrome/API/Browser_API/Using
 
-	- [ ] 352 05 Sync + Async Code - The Execution Order | 04:03
+	- [x] 352 05 Sync + Async Code - The Execution Order | 04:03
 
 		Callbacks	
 		```javascript
@@ -78,7 +78,7 @@
 		button.addEventListener('click', trackUserHandler);
 		```
 
-	- [ ] 353 06 Multiple Callbacks & setTimeout(0) | 03:20
+	- [x] 353 06 Multiple Callbacks & setTimeout(0) | 03:20
 
 		Nested Callbacks
 		```javascript
@@ -105,7 +105,7 @@
 		button.addEventListener('click', trackUserHandler);
 		```
 
-	- [ ] 354 07 Getting Started with Promises | 08:25
+	- [x] 354 07 Getting Started with Promises | 08:25
 	  - Nested callbacks can be difficult to read
 
 		```javascript
@@ -149,27 +149,27 @@
 		button.addEventListener('click', trackUserHandler);
 		```
 
-	- [ ] 355 08 Chaining Multiple Promises | 05:53
+	- [x] 355 08 Chaining Multiple Promises | 05:53
 	  - The Promise-success(ful) results are returned step by step.
-	- [ ] 356 09 Promise Error Handling | 07:46  
+	- [x] 356 09 Promise Error Handling | 07:46  
 	  - Errors are not handled with the normal .then()
 		- catch() is an alternative to errors and error handling
 		  - does not cancel the Promise, but allows it to continue
-	- [ ] 357 10 Promise States & "finally" | 00:41  
-	- [ ] 358 11 Async/ await | 09:11
+	- [x] 357 10 Promise States & "finally" | 00:41  
+	- [x] 358 11 Async/ await | 09:11
 	  - Only in functions
 		- Returns a Promise
 		- await in front of each internal Promise
 		- Does NOT block execution
 		- Just transforms the code behind the scenes
-	- [ ] 359 12 Async/ await & Error Handling | 03:07
+	- [x] 359 12 Async/ await & Error Handling | 03:07
 	  - try/catch can be used here  
-	- [ ] 360 13 Async/ await vs "Raw Promises" | 04:56
-	- [ ] 361 14 Promise.all(), Promise.race() etc. | 07:59
+	- [x] 360 13 Async/ await vs "Raw Promises" | 04:56
+	- [x] 361 14 Promise.all(), Promise.race() etc. | 07:59
 	  - Multiple Promises that I want to orchestrate
 		- Promise.race() // static method to get the faster of two Promises
 		- Promise.all()  // The data is the COMBINATION of all the (Promise) data (as an array).
 		  - If one of the promises fails, the other is cancelled, and I just get the error.
 		- Promise.allSettled() // Disposition of all of the Promises
-	- [ ] 362 15 Wrap Up | 01:27
-	- [ ] 363 16 Useful Resources & Links | 00:10
+	- [x] 362 15 Wrap Up | 01:27
+	- [x] 363 16 Useful Resources & Links | 00:10
