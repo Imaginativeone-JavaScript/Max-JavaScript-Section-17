@@ -169,5 +169,7 @@
 	  - Multiple Promises that I want to orchestrate
 		- Promise.race() // static method to get the faster of two Promises
 		- Promise.all()  // The data is the COMBINATION of all the (Promise) data (as an array).
+		  - If one of the promises fails, the other is cancelled, and I just get the error.
+		- Promise.allSettled() // Disposition of all of the Promises
 	- [ ] 362 15 Wrap Up | 01:27
 	- [ ] 363 16 Useful Resources & Links | 00:10
